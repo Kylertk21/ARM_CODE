@@ -4,7 +4,11 @@
 	AREA	HW6, CODE, READONLY
 	EXPORT	main		;required by the startup code
 	ENTRY
+<<<<<<< HEAD
 main
+=======
+	
+>>>>>>> d706acf9b0a9119b38e36be4588b823e42940b6c
 	LDR R1, =HexStr
 	MOV R2, #0x0
 Start
@@ -96,10 +100,17 @@ adrTwosComp		DCD	TwosComp
 adrDecStr		DCD	DecStr
 adrRvsDecStr	DCD	RvsDecStr
 	
+<<<<<<< HEAD
 	EXPORT adrHexStr
 	EXPORT adrTwosComp
 	EXPORT adrDecStr
 	EXPORT adrRvsDecStr
+=======
+EXPORT adrHexStr
+EXPORT adrTwosComp
+EXPORT adrDecStr
+EXPORT adrRevDecStr
+>>>>>>> d706acf9b0a9119b38e36be4588b823e42940b6c
 	
 	ALIGN
 
