@@ -12,9 +12,9 @@ main
 	MOV R3, #0 
 Start
 	LDRB R4, [R1, R2]
-	CMP R4, #0
+	CMP R4, #'0'
 	BEQ IsBitZero
-	CMP R4, #1
+	CMP R4, #'1'
 	BNE DoneErrDet
 	EOR R3, R3, R2
 IsBitZero
@@ -24,12 +24,12 @@ DoneErrDet
 	CMP R3, #0
 	BEQ DoneErrCorr
 	LDRB R4, [R1, R3]
-	CMP R4, #0
+	CMP R4, #'0'
 	BEQ AZero
-	MOV R4, #0
+	MOV R4, #'0'
 	B Hop
 AZero
-	MOV R4, #1
+	MOV R4, #'1'
 Hop
 	STRB R4, [R1, R3]
 DoneErrCorr
@@ -38,7 +38,7 @@ DoneErrCorr
 	MOV R6, #1
 Loop
 	LDRB R4, [R1, R2] 
-	CMP R4, #0
+	CMP R4, #0x00
 	BEQ DoneSrcWord
 	CMP R2, R6
 	BLO ADataBit
