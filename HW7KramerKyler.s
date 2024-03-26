@@ -48,12 +48,13 @@ ADataBit
 	STRB R4, [R5], #1
 Hop2
 	ADD R2, #1 
+	B Loop
 DoneSrcWord
 	STRB R4, [R5] 
 	SVC #0x11
 	
 	AREA	HW7Data, DATA, READWRITE
-HCode 		DCB "111111000001101", 0
+HCode 		DCB "010011100101", 0
 SrcWord 	SPACE MAX_LEN
 	
 adrHCode 	DCD HCode
